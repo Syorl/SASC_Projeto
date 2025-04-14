@@ -1,0 +1,16 @@
+[
+    { "numeroSala": 101, "andar": "1º" },
+    { "numeroSala": 102, "andar": "1º" },
+    { "numeroSala": 103, "andar": "1º" },
+    { "numeroSala": 104, "andar": "1º" },
+  
+    { "numeroSala": 201, "andar": "2º" },
+    { "numeroSala": 202, "andar": "2º" },
+    { "numeroSala": 203, "andar": "2º" },
+    { "numeroSala": 204, "andar": "2º" },
+  
+    { "numeroSala": 301, "andar": "3º" },
+    { "numeroSala": 302, "andar": "3º" },
+    { "numeroSala": 303, "andar": "3º" },
+    { "numeroSala": 304, "andar": "3º" }
+  ]
