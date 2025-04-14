@@ -1,0 +1,124 @@
+/* Reset e Estilos Base */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+}
+
+/* Painel Esquerdo - Conteúdo Principal */
+.main-content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Arial Black', Gadget, sans-serif;
+    font-size: 72px;
+    color: #000000;
+    margin: 0 0 10px 0;
+    writing-mode: vertical-rl; /* Texto vertical da direita para esquerda */
+    transform: rotate(180deg); /* Gira 180 graus para ficar na orientação correta */
+    text-orientation: mixed;
+    white-space: nowrap;
+}
+
+.subtitle {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #000000;
+    margin: 10;
+    line-height: 2;
+    max-width: 400px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-orientation: mixed;
+    white-space: pre-line;
+    margin-top: 30px; /* Espaço entre SASC e o subtítulo */
+}   
+
+/* Painel Direito - Retângulo Azul */
+.right-panel {
+    width: 40%;
+    background-color: #02233b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Restante do CSS permanece igual */
+.login-container {
+    background-color: white;
+    width: 80%;
+    max-width: 400px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.continue-btn {
+    background-color: #02233b;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.continue-btn:hover {
+    background-color: #011a2e;
+}
+
+.account-check {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.account-check a {
+    color: #02233b;
+    text-decoration: none;
+    font-weight: bold;
+}

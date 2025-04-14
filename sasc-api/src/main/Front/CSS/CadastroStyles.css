@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #011f3f; /* Ajuste conforme necessário */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Container para centralizar o card */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Card branco */
+  .card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Formulário utilizando grid para organizar os campos em 2 colunas */
+  .register-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas */
+    grid-gap: 20px; /* Espaço horizontal e vertical entre os campos */
+  }
+  
+  /* Cada campo (label + input) está dentro de .form-group */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Ajustando label */
+  .form-group label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  /* Ajustando input, select */
+  .form-group input,
+  .form-group select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  /* Efeito de foco nos inputs e selects */
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: #0052cc;
+  }
+  
+  /* Para o último "Setor" e o botão, podemos posicionar um em cada coluna,
+     mas aqui a .btn-container ficará na 2ª coluna */
+  .form-group:nth-child(5) {
+    grid-column: 1; /* Setor na primeira coluna */
+  }
+  
+  /* A área do botão fica na segunda coluna, na mesma linha do "Setor" */
+  .btn-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    grid-column: 2;
+  }
+  
+  /* Botão CONTINUAR */
+  .btn-continue {
+    padding: 12px 20px;
+    background-color: #0052cc;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  /* Hover do botão */
+  .btn-continue:hover {
+    background-color: #003d99;
+  }
+  
+  /* Se a tela for muito estreita, exibe tudo em uma única coluna */
+  @media (max-width: 600px) {
+    .register-form {
+      grid-template-columns: 1fr; /* Uma coluna só */
+    }
+    
+    /* Setor e botão passam a ficar empilhados */
+    .form-group:nth-child(5),
+    .btn-container {
+      grid-column: 1; 
+    }
+  
+    .btn-container {
+      margin-top: -5px; /* Ajuste para reduzir espaço extra, se quiser */
+      justify-content: flex-start;
+    }
+  }
+  

@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Conteúdo principal centralizado */
+.main-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Arial Black', Gadget, sans-serif;
+    font-size: 72px;
+    color: #000000;
+    margin: 0 0 10px 0;
+}
+
+.subtitle {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #000000;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Painel direito com retângulo azul */
+.right-panel {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 300px;
+}
+
+.blue-rectangle {
+    background-color: #02233b;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    position: relative; /* Permite posicionar o texto "AGENDAR" absolutamente dentro dele */
+}
+
+.agendar-text {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    position: absolute;
+    bottom: 20px; /* Distância do fundo */
+    right: 20px; /* Distância da direita */
+    margin: 0;
+}
+
+.agendar-text a {
+    color: white !important;
+    text-decoration: none; /* remove o sublinhado padrão dos links */
+}
+.agendar-text a:hover {
+    text-decoration: underline; /* opcional: adiciona sublinhado ao passar o mouse */
+}
