@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agendamento de Reunião</title>
+    <link rel="stylesheet" href="../CSS/AgendamentoStyles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Painel esquerdo com seleção de sala e calendário -->
+      <div class="left-panel">
+        <label for="sala">Sala*</label>
+        <select id="sala">
+          <option>Sala 1</option>
+          <option>Sala 2</option>
+          <option>Sala 3</option>
+          <option>Sala 4</option>
+        </select>
+
+        <div class="calendar">
+          <h2>Selecione uma data para reunião:</h2>
+          <div class="month-nav">
+            <button id="prev-month">&#8249;</button>
+            <span id="month-year"></span>
+            <button id="next-month">&#8250;</button>
+          </div>
+          <table id="calendar">
+            <thead>
+              <tr>
+                <th>DOM</th>
+                <th>SEG</th>
+                <th>TER</th>
+                <th>QUA</th>
+                <th>QUI</th>
+                <th>SEX</th>
+                <th>SÁB</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Painel direito com avatar, dados e horários -->
+      <div class="right-panel">
+        <div class="profile">
+          <!-- Avatar fixo com imagem genérica -->
+          <div class="avatar-container">
+            <img
+              class="avatar"
+              src="../CSS/Imagens/Icone.png"
+              alt="Avatar do Usuário"
+            />
+          </div>
+          <!-- Nome e setor do usuário vindos do localStorage -->
+          <p>
+            <strong>Nome:</strong> <span id="user-name">Carregando...</span>
+          </p>
+          <p>
+            <strong>Setor:</strong> <span id="user-sector">Carregando...</span>
+          </p>
+        </div>
+
+        <!-- Seleção de horário -->
+        <h3>Qual o melhor horário:</h3>
+        <div class="horarios">
+          <button>7:00</button>
+          <button>8:00</button>
+          <button>9:00</button>
+          <button>10:00</button>
+          <button>13:00</button>
+          <button>14:00</button>
+          <button>15:00</button>
+        </div>
+
+        <button class="confirmar">CONFIRMAR</button>
+      </div>
+    </div>
+
+    <script src="../Scripts/AgendamentoScript.js"></script>
+<!-- Modal de Sucesso -->
+<div id="modal-sucesso" class="modal">
+  <div class="modal-content sucesso">
+    <p>✅ Agendamento realizado com sucesso!</p>
+    <button onclick="fecharModal('modal-sucesso')">Fechar</button>
+  </div>
+</div>
+
+<!-- Modal de Erro -->
+<div id="modal-erro" class="modal">
+  <div class="modal-content erro">
+    <p>❌ Falha ao fazer o agendamento.<br><strong>Motivo:</strong> Horário já reservado.</p>
+    <button onclick="fecharModal('modal-erro')">Fechar</button>
+  </div>
+</div>
+
+  
+  </body>
+</html>

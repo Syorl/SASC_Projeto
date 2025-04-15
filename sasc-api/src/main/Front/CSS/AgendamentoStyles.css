@@ -1,0 +1,179 @@
+/* Reset básico */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #002339;
+    color: #fff;
+  }
+  
+  /* Container principal com duas colunas */
+  .container {
+    display: flex;
+    height: 100vh; /* Preenche toda a tela */
+    width: 100vw;
+  }
+  
+  /* Painel esquerdo: azul escuro */
+  .left-panel {
+    background-color: #002339;
+    padding: 30px;
+    flex: 1;
+  }
+  
+  /* Painel direito: branco e sem margem */
+  .right-panel {
+    background-color: #fff;
+    color: #002339;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo para dropdown */
+  select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px;
+    border-radius: 8px;
+    border: none;
+  }
+  
+  /* Calendário */
+  .calendar {
+    margin-top: 20px;
+  }
+  
+  .month-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  #calendar {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+  }
+  
+  #calendar td, #calendar th {
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  #calendar td:hover {
+    background-color: #0a3d62;
+  }
+  
+  td.selected {
+    background-color: #fff;
+    color: #002339;
+    font-weight: bold;
+  }
+  
+  /* Avatar e perfil */
+  .profile {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .avatar-upload input {
+    display: none;
+  }
+  
+  .avatar {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+  }
+  
+  /* Horários */
+  .horarios {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .horarios button {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #002339;
+    background-color: #e0f0ff;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .horarios button.selected {
+    background-color: #002339;
+    color: white;
+  }
+  
+  /* Botão de confirmação */
+  .confirmar {
+    margin-top: auto;
+    margin-left: 300;
+    padding: 12px 24px;
+    background-color: #002339;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Estilo geral do modal */
+  .modal {
+    display: none; /* MUITO IMPORTANTE */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  
+  /* Conteúdo do modal */
+  .modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    font-size: 16px;
+  }
+  
+  /* Estilos diferentes para sucesso e erro */
+  .modal-content.sucesso {
+    border: 2px solid #28a745;
+    color: #28a745;
+  }
+  
+  .modal-content.erro {
+    border: 2px solid #dc3545;
+    color: #dc3545;
+  }
+  
+  /* Botão dentro do modal */
+  .modal-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #002339;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  

@@ -23,10 +23,10 @@ body {
 }
 
 h1 {
-    font-family: 'Arial Black', Gadget, sans-serif;
-    font-size: 72px;
+    font-family: 'sans-serif', Gadget, sans-serif;
+    font-size: 120px;
     color: #000000;
-    margin: 0 0 10px 0;
+    margin: -80px -550px 10px 0;
     writing-mode: vertical-rl; /* Texto vertical da direita para esquerda */
     transform: rotate(180deg); /* Gira 180 graus para ficar na orientação correta */
     text-orientation: mixed;
@@ -35,7 +35,7 @@ h1 {
 
 .subtitle {
     font-family: Arial, sans-serif;
-    font-size: 18px;
+    font-size: 12px;
     color: #000000;
     margin: 10;
     line-height: 2;
@@ -44,7 +44,8 @@ h1 {
     transform: rotate(180deg);
     text-orientation: mixed;
     white-space: pre-line;
-    margin-top: 30px; /* Espaço entre SASC e o subtítulo */
+    margin-left: 700px; 
+    margin-top: -330px;/* Espaço entre SASC e o subtítulo */
 }   
 
 /* Painel Direito - Retângulo Azul */

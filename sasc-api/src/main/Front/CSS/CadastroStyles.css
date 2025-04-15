@@ -67,7 +67,7 @@
   /* Efeito de foco nos inputs e selects */
   .form-group input:focus,
   .form-group select:focus {
-    border-color: #0052cc;
+    border-color: #032961;
   }
   
   /* Para o último "Setor" e o botão, podemos posicionar um em cada coluna,
@@ -87,7 +87,7 @@
   /* Botão CONTINUAR */
   .btn-continue {
     padding: 12px 20px;
-    background-color: #0052cc;
+    background-color: #032b68;
     border: none;
     border-radius: 4px;
     color: #ffffff;
