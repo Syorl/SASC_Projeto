@@ -17,7 +17,11 @@
           <option>Sala 3</option>
           <option>Sala 4</option>
         </select>
+<<<<<<< HEAD
+        
+=======
 
+>>>>>>> 8e080a2ad825adb7ad58b3b4dd678f94fb1b62d4
         <div class="calendar">
           <h2>Selecione uma data para reunião:</h2>
           <div class="month-nav">
@@ -47,11 +51,15 @@
         <div class="profile">
           <!-- Avatar fixo com imagem genérica -->
           <div class="avatar-container">
+<<<<<<< HEAD
+            <img class="avatar" src="../CSS/Imagens/Icone.png" alt="Avatar do Usuário" />
+=======
             <img
               class="avatar"
               src="../CSS/Imagens/Icone.png"
               alt="Avatar do Usuário"
             />
+>>>>>>> 8e080a2ad825adb7ad58b3b4dd678f94fb1b62d4
           </div>
           <!-- Nome e setor do usuário vindos do localStorage -->
           <p>
@@ -77,6 +85,79 @@
         <button class="confirmar">CONFIRMAR</button>
       </div>
     </div>
+<<<<<<< HEAD
+    
+    <!-- Scripts de calendário e seleção de horário -->
+    <script src="../Scripts/AgendamentoScript.js"></script>
+    
+    <!-- Modal de Sucesso -->
+    <div id="modal-sucesso" class="modal">
+      <div class="modal-content sucesso">
+        <p>✅ Agendamento realizado com sucesso!</p>
+        <button onclick="fecharModal('modal-sucesso')">Fechar</button>
+      </div>
+    </div>
+
+    <!-- Modal de Erro -->
+    <div id="modal-erro" class="modal">
+      <div class="modal-content erro">
+        <p>❌ Falha ao fazer o agendamento.<br><strong>Motivo:</strong> Horário já reservado.</p>
+        <button onclick="fecharModal('modal-erro')">Fechar</button>
+      </div>
+    </div>
+    
+    <!-- Script para enviar agendamento para a API -->
+    <script>
+      // Exemplo de código para enviar o agendamento:
+      document.querySelector('.confirmar').addEventListener('click', () => {
+        const sala = document.getElementById('sala').value;
+        const diaSelecionado = document.querySelector('#calendar td.selected');
+        const horarioSelecionado = document.querySelector('.horarios button.selected');
+        
+        // Validação: verifique se uma data e um horário foram selecionados
+        if (!diaSelecionado || !horarioSelecionado) {
+          alert('Selecione uma data e um horário.');
+          return;
+        }
+        
+        // Você pode precisar formatar o dia selecionado para data completa, se necessário
+        const dataAgendamento = {
+          sala: sala,
+          data: diaSelecionado.textContent,
+          horario: horarioSelecionado.textContent,
+          userId: localStorage.getItem('userId') // supondo que você armazene o ID do usuário após o login
+        };
+        
+        fetch('https://marcusvinilima.github.io/SASC_Projeto/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(dataAgendamento)
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          if(data.message){
+            alert(data.message);
+            // Opcionalmente, limpe a seleção ou redirecione
+          } else if(data.error) {
+            alert(data.error);
+          }
+        })
+        .catch(error => {
+          console.error('Erro:', error);
+          alert("Erro ao realizar agendamento!");
+        });
+      });
+
+      // Atualiza o nome e setor na página com base no localStorage
+      document.addEventListener('DOMContentLoaded', () => {
+        const userName = localStorage.getItem('userName') || 'Carregando...';
+        const userSector = localStorage.getItem('userSector') || 'Carregando...';
+        document.getElementById('user-name').textContent = userName;
+        document.getElementById('user-sector').textContent = userSector;
+      });
+    </script>
+=======
 
     <script src="../Scripts/AgendamentoScript.js"></script>
 <!-- Modal de Sucesso -->
@@ -96,5 +177,6 @@
 </div>
 
   
+>>>>>>> 8e080a2ad825adb7ad58b3b4dd678f94fb1b62d4
   </body>
 </html>

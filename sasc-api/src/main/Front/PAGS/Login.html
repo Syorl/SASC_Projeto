@@ -1,32 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SASC - Login</title>
-    <link rel="stylesheet" href="../CSS/LoginStyles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SASC - Login</title>
+  <link rel="stylesheet" href="../CSS/LoginStyles.css">
 </head>
 <body>
-    <div class="main-content">
-        <h1>SASC</h1>
-        <p class="subtitle">Sistema Web de Agendamento de Salas Corporativas</p>
-    </div>
-    
-    <div class="right-panel">
-        <div class="login-container">
-            <div class="login-form">
-                <div class="form-group">
-                    <label for="email">Endereço de E-mail*</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Senha*</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" class="continue-btn">CONTINUAR</button>
-                <p class="account-check">Já tem uma conta? <a href="/sasc-api/src/main/Front/PAGS/Cadastro.html">CADASTRE-SE</a></p>
-            </div>
+  <div class="main-content">
+    <h1>SASC</h1>
+    <p class="subtitle">Sistema Web de Agendamento de Salas Corporativas</p>
+  </div>
+  
+  <!-- Formulário de Login -->
+  <div class="right-panel">
+    <div class="login-container">
+      <form id="login-form">
+        <div class="login-form">
+          <div class="form-group">
+            <label for="email">Endereço de E-mail*</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Senha*</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button type="submit" class="continue-btn">CONTINUAR</button>
+          <p class="account-check">
+            Ainda não tem uma conta? <a href="Cadastro.html">CADASTRE-SE</a>
+          </p>
         </div>
+      </form>
     </div>
+  </div>
+  
+  <!-- Script para envio via fetch -->
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('password').value;
+      
+      fetch('https://https://marcusvinilima.github.io/SASC_Projeto/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, senha })
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        if(data.message) {
+          alert(data.message);
+          // Armazena informações essenciais no localStorage, se necessário:
+          if(data.user) {
+            localStorage.setItem('userId', data.user.id);
+            localStorage.setItem('userName', data.user.nome);
+            localStorage.setItem('userSector', data.user.setor);
+          }
+          // Redirecione para a página de agendamento:
+          window.location.href = "Agendamento.html";
+        } else if(data.error) {
+          alert(data.error);
+        }
+      })
+      .catch(error => {
+        console.error('Erro:', error);
+        alert("Erro no login!");
+      });
+    });
+  </script>
 </body>
 </html>
